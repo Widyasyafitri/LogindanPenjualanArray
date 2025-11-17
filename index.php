@@ -10,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Commit 3 — Login statis
     if ($username === 'admin' && $password === '1234') {
         $_SESSION['username'] = $username;
+        $_SESSION['role'] = 'Dosen'; // ← DITAMBAHKAN AGAR DASHBOARD TIDAK ERROR
+        
         header("Location: dashboard.php");
         exit;
     } else {
