@@ -57,4 +57,20 @@ for ($i = 0; $i < 5; $i++) {
 // COMMIT 8 — Total Belanja
 echo "<h3>Total Belanja: Rp " . number_format($grandtotal) . "</h3>";
 ?>
+<?php
+// COMMIT 9 — Diskon Belanja
+if ($grandtotal < 50000) {
+    $diskon = 5;
+} elseif ($grandtotal <= 100000) {
+    $diskon = 10;
+} else {
+    $diskon = 15;
+}
+
+$nilaiDiskon = $grandtotal * $diskon / 100;
+$totalAkhir  = $grandtotal - $nilaiDiskon;
+
+echo "<h3>Diskon {$diskon}% : Rp " . number_format($nilaiDiskon) . "</h3>";
+echo "<h3>Total Bayar Setelah Diskon: Rp " . number_format($totalAkhir) . "</h3>";
+?>
 
