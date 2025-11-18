@@ -30,4 +30,26 @@ for ($i = 0; $i < 5; $i++) {
     </tr>
 
     <?php
-    
+    // COMMIT 7 — Hitung total tiap item
+    $grandtotal = 0;
+
+    for ($i = 0; $i < count($beli); $i++) {
+        $index = array_search($beli[$i], $kode_barang);
+
+        $nama  = $nama_barang[$index];
+        $harga = $harga_barang[$index];
+        $qty   = $jumlah[$i];
+        $total = $harga * $qty;
+
+        $grandtotal += $total;
+
+        echo "<tr>
+                <td>{$beli[$i]}</td>
+                <td>{$nama}</td>
+                <td>Rp " . number_format($harga) . "</td>
+                <td>{$qty}</td>
+                <td>Rp " . number_format($total) . "</td>
+              </tr>";
+    }
+    ?>
+</table>
