@@ -53,3 +53,8 @@ for ($i = 0; $i < 5; $i++) {
     }
     ?>
 </table>
+<?php
+// COMMIT 8 — Total Belanja
+echo "<h3>Total Belanja: Rp " . number_format($grandtotal) . "</h3>";
+?>
+
